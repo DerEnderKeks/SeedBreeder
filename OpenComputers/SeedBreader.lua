@@ -203,10 +203,10 @@ function fuel() -- Fuels Robot
 	return true -- When the energy is highter or equal than 1000
 end
 function tidySticks()
-	if compareItemInSlot("AgriCraft:crops_sticks",slot.sticks[1]) then
+	if compareItemInSlot("AgriCraft:crop_sticks",slot.sticks[1]) then
 		return true
 	else
-		if compareItemInSlot("AgriCraft:crops_sticks",slot.sticks[2]) then
+		if compareItemInSlot("AgriCraft:crop_sticks",slot.sticks[2]) then
 			transferItem(slot.sticks[2],slot.sticks[1])
 			return true
 		end
@@ -320,10 +320,10 @@ function storeYeld()
 	if not compareItemInSlot("minecraft:coal",1) and checkCount(1,1) then
 		localSlot = 1
 	end
-	if not compareItemInSlot("AgriCraft:crops_sticks",2) and checkCount(2,1) then
+	if not compareItemInSlot("AgriCraft:cros_sticks",2) and checkCount(2,1) then
 		localSlot = 2
 	end
-	if not compareItemInSlot("AgriCraft:crops_sticks",3) and checkCount(3,1) then
+	if not compareItemInSlot("AgriCraft:cros_sticks",3) and checkCount(3,1) then
 		localSlot = 3
 	end
 	if not compareItemInSlot("AgriCraft:rake",4) and checkCount(4,1) then
