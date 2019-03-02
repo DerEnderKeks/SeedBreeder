@@ -203,10 +203,10 @@ function fuel() -- Fuels Robot
 	return true -- When the energy is highter or equal than 1000
 end
 function tidySticks()
-	if compareItemInSlot("AgriCraft:cropsItem",slot.sticks[1]) then
+	if compareItemInSlot("AgriCraft:crops_sticks",slot.sticks[1]) then
 		return true
 	else
-		if compareItemInSlot("AgriCraft:cropsItem",slot.sticks[2]) then
+		if compareItemInSlot("AgriCraft:crops_sticks",slot.sticks[2]) then
 			transferItem(slot.sticks[2],slot.sticks[1])
 			return true
 		end
@@ -221,7 +221,7 @@ function sticks()
 	return true
 end
 function rake()
-	if compareItemInSlot("AgriCraft:handRake",slot.rake) then
+	if compareItemInSlot("AgriCraft:rake",slot.rake) then
 		return true
 	end
 	noRake()
@@ -320,13 +320,13 @@ function storeYeld()
 	if not compareItemInSlot("minecraft:coal",1) and checkCount(1,1) then
 		localSlot = 1
 	end
-	if not compareItemInSlot("AgriCraft:cropsItem",2) and checkCount(2,1) then
+	if not compareItemInSlot("AgriCraft:crops_sticks",2) and checkCount(2,1) then
 		localSlot = 2
 	end
-	if not compareItemInSlot("AgriCraft:cropsItem",3) and checkCount(3,1) then
+	if not compareItemInSlot("AgriCraft:crops_sticks",3) and checkCount(3,1) then
 		localSlot = 3
 	end
-	if not compareItemInSlot("AgriCraft:handRake",4) and checkCount(4,1) then
+	if not compareItemInSlot("AgriCraft:rake",4) and checkCount(4,1) then
 		localSlot = 4
 	end
 	move(cpos.chest)
@@ -503,7 +503,7 @@ function main()
   print("Sleep amount between generations: "..sleepAmountBetweenGenerations.."s")
   print("Sleep amount when watching seeds: "..sleepAmountWhenWachingSeeds.."s")
   print(lang_line)
-  os.sleep(5)
+  os.sleep(2)
 	if fuel() and sticks() and rake() then
 		numOfSeeds = seeds()
 		if numOfSeeds == 1 then
@@ -540,7 +540,7 @@ function main()
 			end
 			curSubGen = curSubGen + 1
 		end
-		print("Maximum number of generations reached! You seed might not be 10/10/10!")
+		print("Maximum number of generations reached! Your seed might not be 10/10/10!")
 	end
 end
 --move(startpos)
